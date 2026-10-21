@@ -1,0 +1,56 @@
+# Datos de entrada y resultados locales: nunca publicar en Git.
+/archivos_temporales/
+/resultados_temporales/
+/pruebas_locales/
+/datos_prueba_locales/
+/backups/
+/respaldos/
+/output/
+/INFORME_*.txt
+# Manual local que puede contener ejemplos del repositorio corporativo.
+/DOCUMENTACION_SISTEMA_ETL.txt
+*.xml
+*.properties
+*.backup
+*.dump
+*.sql.gz
+*.sqlite
+*.sqlite3
+*.db
+
+# Configuracion privada. Solo se admite la plantilla revisada.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python y dependencias.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Frontend y compilaciones.
+node_modules/
+dist/
+dist-ssr/
+build/
+coverage/
+*.tsbuildinfo
+*.log
+
+# Editor y sistema operativo.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
