@@ -1,0 +1,114 @@
+/* Existing dark colors remain the fallback in each component stylesheet.
+   Only color tokens change: layouts, spacing, diagrams and behavior stay put. */
+:root {
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --background: #f1f4fa;
+  --panel: #ffffff;
+  --panel-soft: #f6f8fc;
+  --panel-light: #edf2f8;
+  --border: #dce3ee;
+  --text: #172b45;
+  --muted: #5d6e85;
+  --primary: #1769c5;
+  --primary-light: #155fb4;
+  --success: #087e65;
+  --info: #086f96;
+  --warning: #986000;
+
+  --theme-page: var(--background);
+  --theme-surface: #ffffff;
+  --theme-surface-soft: #f6f8fc;
+  --theme-surface-hover: #edf2f9;
+  --theme-canvas: #f8fafd;
+  --theme-grid: #dce4f0;
+  --theme-ink: #172b45;
+  --theme-ink-secondary: #425773;
+  --theme-ink-muted: #5d6e85;
+  --theme-border: #dce3ee;
+  --theme-border-strong: #b7c7dc;
+  --theme-accent-ink: #155fb4;
+  --theme-accent-soft: rgba(23, 105, 197, 0.08);
+  --theme-accent-border: #9abde6;
+  --theme-accent-fill: #1769c5;
+  --theme-accent-fill-end: #267ecb;
+  --theme-success-ink: #087e65;
+  --theme-success-soft: rgba(8, 126, 101, 0.07);
+  --theme-success-border: #8ac6b7;
+  --theme-info-ink: #086f96;
+  --theme-info-soft: rgba(8, 111, 150, 0.07);
+  --theme-info-border: #91bfd1;
+  --theme-warning-ink: #986000;
+  --theme-warning-soft: rgba(171, 112, 15, 0.08);
+  --theme-warning-border: #d6b77c;
+  --theme-danger-ink: #b02d49;
+  --theme-danger-soft: rgba(176, 45, 73, 0.07);
+  --theme-danger-border: #dc9aaa;
+  --theme-overlay: rgba(24, 40, 65, 0.36);
+  --theme-shadow: rgba(30, 54, 90, 0.12);
+  --theme-scrollbar: #b5c3d6;
+  --theme-on-accent: #ffffff;
+}
+
+.theme-toggle {
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  color: var(--primary-light);
+  background: var(--panel-soft);
+}
+
+.brand strong {
+  font-size: 18px;
+  line-height: 1.1;
+  white-space: normal;
+}
+
+.theme-toggle:hover {
+  border-color: var(--primary-light);
+  background: var(--panel-light);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 3px;
+}
+
+/* Reserve room for the extra control on compact desktop headers. */
+@media (min-width: 821px) and (max-width: 1400px) {
+  .topbar { grid-template-columns: 150px 1fr auto; gap: 12px; padding-inline: 20px; }
+  .top-navigation { gap: 4px; }
+  .top-nav-item { padding-inline: 11px; }
+  .top-actions { gap: 8px; }
+}
+
+:root[data-theme='light'] :is(
+  .topbar, .sidebar, .hero-card, .process-card, .flow-card,
+  .small-card, .child-card, .insight-card
+) {
+  box-shadow: 0 2px 7px rgba(30, 54, 90, 0.045);
+}
+
+:root[data-theme='light'] .top-nav-item.active {
+  color: var(--primary);
+}
+
+:root[data-theme='light'] :is(.primary-button, .import-button, .lineage-action, .avatar-group span) {
+  color: var(--theme-on-accent);
+}
+
+:root[data-theme='light'] .lineage-action span {
+  color: #e1efff;
+}
+
+:root[data-theme='light'] :is(input, textarea)::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+:root[data-theme='light'] :focus-visible {
+  outline-color: var(--primary);
+}

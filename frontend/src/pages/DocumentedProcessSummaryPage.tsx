@@ -60,7 +60,7 @@ function DocumentedProcessSummaryPage({
       <section className="documented-summary-hero">
         <div>
           <span className="documented-context-label">
-            DOCUMENTED ETL PROCESS
+            PROCESO ETL DOCUMENTADO
           </span>
           <h1>{process.nombre}</h1>
           <p>
@@ -81,19 +81,19 @@ function DocumentedProcessSummaryPage({
       <section className="documented-summary-metrics">
         <article>
           <Boxes size={21} />
-          <span>COMPONENTS</span>
+          <span>COMPONENTES</span>
           <strong>{summary.componentes}</strong>
           <small>{summary.jobs} Jobs · {summary.transformaciones} transformations</small>
         </article>
         <article>
           <Network size={21} />
-          <span>DIAGRAMS</span>
+          <span>DIAGRAMAS</span>
           <strong>{summary.diagramas}</strong>
           <small>Navigable process diagrams</small>
         </article>
         <article>
           <Table2 size={21} />
-          <span>DWH TABLES</span>
+          <span>TABLAS DWH</span>
           <strong>{summary.dimensiones + summary.hechos}</strong>
           <small>{summary.dimensiones} DIM · {summary.hechos} FACT</small>
         </article>
@@ -108,15 +108,15 @@ function DocumentedProcessSummaryPage({
       <section className="documented-summary-actions">
         <button type="button" onClick={() => onNavigate('diagrams')}>
           <Workflow size={24} />
-          <span><strong>Explore diagrams</strong><small>Navigate through Jobs and transformations</small></span>
+          <span><strong>Explorar diagramas</strong><small>Navegar entre Jobs y transformaciones</small></span>
         </button>
         <button type="button" onClick={() => onNavigate('lineage')}>
           <GitBranch size={24} />
-          <span><strong>Explore lineage</strong><small>Variables, parameters, FACT and DIM tables</small></span>
+          <span><strong>Explorar linaje</strong><small>Variables, parámetros y tablas FACT y DIM</small></span>
         </button>
         <button type="button" onClick={() => onNavigate('documentation')}>
           <FileText size={24} />
-          <span><strong>Open documentation</strong><small>Complete inventory and persisted metadata</small></span>
+          <span><strong>Abrir documentación</strong><small>Inventario completo y metadatos guardados</small></span>
         </button>
       </section>
 

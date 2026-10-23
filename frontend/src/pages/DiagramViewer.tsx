@@ -834,12 +834,12 @@ function DiagramViewer({
       <header className="diagram-viewer-header">
         <div>
           <span className="diagram-eyebrow">
-            RECONSTRUCTED PROCESS
+            PROCESO RECONSTRUIDO
           </span>
 
           <h2>
             {currentDiagram?.nombre ??
-              'Process diagram'}
+              'Diagrama del proceso'}
           </h2>
 
           <p>
@@ -898,7 +898,7 @@ function DiagramViewer({
               onReturnToProcesses
             }
           >
-            Process Browser
+            Explorador de procesos
           </button>
         </div>
       </header>
@@ -913,7 +913,7 @@ function DiagramViewer({
             onClick={goBack}
           >
             <ArrowLeft size={17} />
-            Back
+            Volver
           </button>
 
           <button
@@ -927,7 +927,7 @@ function DiagramViewer({
             }}
           >
             <Home size={17} />
-            Home
+            Inicio
           </button>
         </div>
 
@@ -1275,7 +1275,7 @@ function DiagramViewer({
                     >
                       <path
                         d="M0,0 L10,5 L0,10 Z"
-                        fill="#8b82ff"
+                        fill="var(--theme-accent-ink, #8b82ff)"
                       />
                     </marker>
 
@@ -1290,7 +1290,7 @@ function DiagramViewer({
                     >
                       <path
                         d="M0,0 L10,5 L0,10 Z"
-                        fill="#5d6274"
+                        fill="var(--theme-ink-muted, #5d6274)"
                       />
                     </marker>
                   </defs>

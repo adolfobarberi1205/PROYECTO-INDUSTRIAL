@@ -512,8 +512,8 @@ function DocumentationPage({
           <div className="sidebar-title">ETL UI</div>
           <div className="sidebar-subtitle">
             {documentedProcessId
-              ? 'DOCUMENTED PROCESS'
-              : 'PROCESS ANALYSIS'}
+              ? 'PROCESO DOCUMENTADO'
+              : 'ANÁLISIS DE PROCESOS'}
           </div>
 
           <nav className="side-navigation">
@@ -527,7 +527,7 @@ function DocumentationPage({
               )}
             >
               <Home size={19} />
-              {documentedProcessId ? 'Summary' : 'Home'}
+              {documentedProcessId ? 'Resumen' : 'Inicio'}
             </button>
 
             <button
@@ -540,7 +540,7 @@ function DocumentationPage({
               )}
             >
               <Workflow size={19} />
-              {documentedProcessId ? 'Diagrams' : 'Processes'}
+              {documentedProcessId ? 'Diagramas' : 'Procesos'}
             </button>
 
             <button
@@ -549,7 +549,7 @@ function DocumentationPage({
               onClick={() => onNavigate('lineage')}
             >
               <GitBranch size={19} />
-              Lineage
+              Linaje
             </button>
 
             <button
@@ -557,7 +557,7 @@ function DocumentationPage({
               className="side-nav-item active"
             >
               <FileText size={19} />
-              Documentation
+              Documentación
             </button>
           </nav>
         </div>
@@ -570,8 +570,8 @@ function DocumentationPage({
           >
             <Import size={17} />
             {documentedProcessId
-              ? 'New Analysis'
-              : 'Import Process'}
+              ? 'Nuevo análisis'
+              : 'Importar proceso'}
           </button>
 
           <div className="sidebar-tools">
@@ -585,7 +585,7 @@ function DocumentationPage({
         {!hasDocumentationSource && (
           <section className="documentation-empty">
             <FileText size={34} />
-            <h1>Nothing to preview yet</h1>
+            <h1>Aún no hay vista previa</h1>
             <p>
               Reconstruct a root Job first, then use Document to review
               exactly what will be stored.
@@ -615,7 +615,7 @@ function DocumentationPage({
               <div className="documentation-hero-copy">
                 <div className="documentation-label">
                   <Eye size={16} />
-                  DOCUMENTATION PREVIEW
+                  VISTA PREVIA DE DOCUMENTACIÓN
                 </div>
 
                 <h1>{preview.proceso_principal.nombre}</h1>
@@ -644,7 +644,7 @@ function DocumentationPage({
                 {documentedProcessId && isEditingProcess && (
                   <div className="documentation-process-editor">
                     <label>
-                      <span>PROCESS NAME</span>
+                      <span>NOMBRE DEL PROCESO</span>
                       <input
                         value={editProcessName}
                         maxLength={500}
@@ -717,7 +717,7 @@ function DocumentationPage({
                       ? 'SAVED'
                       : 'NOT SAVED'}
                   </span>
-                  <span>SANITIZED METADATA</span>
+                  <span>METADATOS SANITIZADOS</span>
                 </div>
               </div>
 
@@ -740,8 +740,8 @@ function DocumentationPage({
               <section className="documentation-lineage-inventory">
                 <div className="documentation-lineage-heading">
                   <div>
-                    <span>PERSISTENT LINEAGE</span>
-                    <h2>Variables and parameters</h2>
+                    <span>LINAJE GUARDADO</span>
+                    <h2>Variables y parámetros</h2>
                     <p>
                       Metadata recovered directly from PostgreSQL. Sensitive
                       values are not stored.
@@ -796,7 +796,7 @@ function DocumentationPage({
 
             <section className="documentation-metrics">
               <article>
-                <span>PROCESSES</span>
+                <span>PROCESOS</span>
                 <strong>{preview.resumen.procesos}</strong>
                 <small>{preview.resumen.diagramas} diagrams</small>
               </article>
@@ -806,12 +806,12 @@ function DocumentationPage({
                 <small>Reachable Jobs</small>
               </article>
               <article>
-                <span>TRANSFORMATIONS</span>
+                <span>TRANSFORMACIONES</span>
                 <strong>{preview.resumen.transformaciones}</strong>
                 <small>Reachable transformations</small>
               </article>
               <article>
-                <span>RELATIONSHIPS</span>
+                <span>RELACIONES</span>
                 <strong>{preview.resumen.relaciones}</strong>
                 <small>{preview.resumen.hops} internal hops</small>
               </article>
@@ -820,8 +820,8 @@ function DocumentationPage({
             <section className="warehouse-output-card">
               <div className="warehouse-output-heading">
                 <div>
-                  <span>DWH OUTPUTS</span>
-                  <h2>Dimension and fact tables</h2>
+                  <span>SALIDAS DWH</span>
+                  <h2>Tablas de dimensiones y hechos</h2>
                   <p>
                     Tables written by the selected process and its
                     reachable transformations.
@@ -980,7 +980,7 @@ function DocumentationPage({
                 selectedDimensionConstruction && (
                   <section className="dimension-construction-result">
                     <div className="dimension-construction-heading">
-                      <span>DIM SELECTED</span>
+                      <span>DIM SELECCIONADA</span>
                       <h3>
                         {selectedDimensionConstruction.nombre_resuelto ||
                           selectedDimensionConstruction.nombre}
@@ -1073,7 +1073,7 @@ function DocumentationPage({
                 selectedFactRelation && (
                   <section className="fact-dimension-result">
                     <div className="fact-dimension-heading">
-                      <span>FACT SELECTED</span>
+                      <span>FACT SELECCIONADA</span>
                       <h3>
                         {selectedFactRelation.nombre_resuelto ||
                           selectedFactRelation.nombre}
@@ -1187,7 +1187,7 @@ function DocumentationPage({
 
             <section className="documentation-storage-card">
               <div>
-                <h2>Storage scope</h2>
+                <h2>Información almacenada</h2>
                 <p>
                   PostgreSQL stores the process architecture, DWH outputs
                   and lineage metadata needed to reopen this documentation.
@@ -1196,7 +1196,7 @@ function DocumentationPage({
 
               <div className="documentation-scope-columns">
                 <div>
-                  <span>INCLUDED NOW</span>
+                  <span>INCLUIDO AHORA</span>
                   {preview.almacenamiento.incluye.map((item) => (
                     <small key={item}>
                       <CheckCircle2 size={15} />
@@ -1206,7 +1206,7 @@ function DocumentationPage({
                 </div>
 
                 <div className="later">
-                  <span>NOT STORED FOR SECURITY</span>
+                  <span>NO ALMACENADO POR SEGURIDAD</span>
                   {preview.almacenamiento.excluye_por_ahora.map((item) => (
                     <small key={item}>{item}</small>
                   ))}
@@ -1217,7 +1217,7 @@ function DocumentationPage({
             <section className="documentation-process-card">
               <div className="documentation-process-heading">
                 <div>
-                  <h2>Process inventory</h2>
+                  <h2>Inventario de procesos</h2>
                   <p>
                     Jobs and transformations included under the selected
                     root process.
@@ -1281,7 +1281,7 @@ function DocumentationPage({
                         )}
                       </span>
                       <strong>{process.nombre}</strong>
-                      {process.es_principal && <small>ROOT</small>}
+                      {process.es_principal && <small>PRINCIPAL</small>}
                     </div>
 
                     <span
@@ -1352,7 +1352,7 @@ function DocumentationPage({
                   }}
                 >
                   <label>
-                    <span>PROCESS NAME</span>
+                    <span>NOMBRE DEL PROCESO</span>
                     <input
                       type="text"
                       value={processName}

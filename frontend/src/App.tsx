@@ -20,6 +20,7 @@ import {
 
 import './App.css'
 import { API_BASE_URL } from './config/api'
+import ThemeToggle from './components/ThemeToggle'
 import ProcessesPage from './pages/ProcessesPage'
 import LineagePage from './pages/LineagePage'
 import DocumentationPage from './pages/DocumentationPage'
@@ -670,10 +671,10 @@ function App() {
     <div className="app-shell">
       <header className="topbar">
         <div className="brand">
-          <strong>ETL Lineage</strong>
+          <strong>Centro de Procesos ETL</strong>
           {isDocumentedContext && (
             <small>
-              {openedDocumentedProcess?.nombre ?? 'Documented process'}
+              {openedDocumentedProcess?.nombre ?? 'Proceso documentado'}
             </small>
           )}
         </div>
@@ -686,14 +687,14 @@ function App() {
                 className={activePage === 'documented-summary' ? 'top-nav-item active' : 'top-nav-item'}
                 onClick={() => setActivePage('documented-summary')}
               >
-                Summary
+                Resumen
               </button>
               <button
                 type="button"
                 className={activePage === 'diagrams' ? 'top-nav-item active' : 'top-nav-item'}
                 onClick={() => setActivePage('diagrams')}
               >
-                Diagrams
+                Diagramas
               </button>
             </>
           ) : (
@@ -703,14 +704,14 @@ function App() {
                 className={activePage === 'overview' ? 'top-nav-item active' : 'top-nav-item'}
                 onClick={() => setActivePage('overview')}
               >
-                Overview
+                Resumen
               </button>
               <button
                 type="button"
                 className={activePage === 'processes' ? 'top-nav-item active' : 'top-nav-item'}
                 onClick={() => setActivePage('processes')}
               >
-                Processes
+                Procesos
               </button>
             </>
           )}
@@ -726,7 +727,7 @@ function App() {
               setActivePage('lineage')
             }}
           >
-            Lineage
+            Linaje
           </button>
 
           <button
@@ -740,7 +741,7 @@ function App() {
               setActivePage('documentation')
             }}
           >
-            Documentation
+            Documentación
           </button>
         </nav>
 
@@ -752,7 +753,7 @@ function App() {
               onClick={leaveDocumentedProcess}
             >
               <ArrowLeft size={16} />
-              Process catalog
+              Catálogo de procesos
             </button>
           )}
 
@@ -767,17 +768,18 @@ function App() {
           >
             <Upload size={17} />
             {isDocumentedContext
-              ? 'New Analysis'
-              : 'Upload Repository'}
+              ? 'Nuevo análisis'
+              : 'Cargar repositorio'}
           </button>
 
           <button
             type="button"
             className="icon-button"
-            aria-label="Notifications"
+            aria-label="Notificaciones"
           >
             <Bell size={20} />
           </button>
+          <ThemeToggle />
         </div>
       </header>
 
@@ -790,7 +792,7 @@ function App() {
               </div>
 
               <div className="sidebar-subtitle">
-                PROCESS ANALYSIS
+                ANÁLISIS DE PROCESOS
               </div>
 
               <nav className="side-navigation">
@@ -802,7 +804,7 @@ function App() {
                   }}
                 >
                   <Home size={19} />
-                  Home
+                  Inicio
                 </button>
 
                 <button
@@ -813,7 +815,7 @@ function App() {
                   }}
                 >
                   <Workflow size={19} />
-                  Processes
+                  Procesos
                 </button>
 
                 <button
@@ -824,7 +826,7 @@ function App() {
                   }}
                 >
                   <GitBranch size={19} />
-                  Lineage
+                  Linaje
                 </button>
 
                 <button
@@ -835,7 +837,7 @@ function App() {
                   }}
                 >
                   <FileText size={19} />
-                  Documentation
+                  Documentación
                 </button>
               </nav>
             </div>
@@ -847,7 +849,7 @@ function App() {
                 onClick={openRepositorySelector}
               >
                 <Import size={17} />
-                Import Process
+                Importar proceso
               </button>
 
               <div className="sidebar-tools">
@@ -860,13 +862,13 @@ function App() {
           <main className="main-content">
             <section className="hero-card">
               <div className="section-label">
-                PROCESS ARCHITECTURE
+                ARQUITECTURA DE PROCESOS
               </div>
 
               <h1>
                 {repositoryIsLoaded
                   ? repositoryName
-                  : 'No repository uploaded'}
+                  : 'Sin repositorio cargado'}
               </h1>
 
               <p className="hero-description">
@@ -889,7 +891,7 @@ function App() {
               <div className="metric-grid">
                 <article className="metric-card">
                   <span>
-                    TOTAL FOLDERS
+                    TOTAL DE CARPETAS
                   </span>
 
                   <strong>
@@ -913,7 +915,7 @@ function App() {
 
                 <article className="metric-card">
                   <span>
-                    VARIABLES FOUND
+                    VARIABLES ENCONTRADAS
                   </span>
 
                   <strong>
@@ -934,11 +936,11 @@ function App() {
             <section className="process-card">
               <div className="section-heading">
                 <h2>
-                  Process Overview
+                  Vista de procesos
                 </h2>
 
                 <span className="section-chip">
-                  CURRENT PROCESS
+                  PROCESO ACTUAL
                 </span>
               </div>
 
@@ -957,12 +959,12 @@ function App() {
                   <span className="process-name">
                     <strong>
                       {selectedDocumentedProcess?.nombre ??
-                        'No documented process selected'}
+                        'Ningún proceso documentado seleccionado'}
                     </strong>
                     <small>
                       {selectedDocumentedProcess
                         ? `ROOT · ${selectedDocumentedProcess.job_principal.nombre}`
-                        : 'SELECT ONE FROM DOCUMENTED PROCESSES'}
+                        : 'SELECCIONA UN PROCESO DOCUMENTADO'}
                     </small>
                   </span>
 
@@ -1028,7 +1030,7 @@ function App() {
                 <Layers3 size={19} />
 
                 <span>
-                  ROOT JOB
+                  JOB PRINCIPAL
                 </span>
 
                 <strong>
@@ -1041,7 +1043,7 @@ function App() {
                 <Activity size={19} />
 
                 <span>
-                  STATUS
+                  ESTADO
                 </span>
 
                 <strong>
@@ -1062,15 +1064,15 @@ function App() {
                   (selectedDocumentedProcess?.resumen.componentes ?? 1) - 1,
                   0,
                 )}{' '}
-                CHILD
+                PROCESOS
                 <br />
-                PROCESSES
+                HIJOS
               </strong>
             </article>
 
             <article className="insight-card">
               <h3>
-                Analysis Insights
+                Detalles del análisis
               </h3>
 
               <p>
@@ -1098,11 +1100,11 @@ function App() {
               <Network size={35} />
 
               <strong>
-                Explore Parameter Flow
+                Explorar flujo de parámetros
               </strong>
 
               <span>
-                TRACE VARIABLES ACROSS PROCESSES
+                RASTREAR VARIABLES ENTRE PROCESOS
               </span>
             </button>
           </aside>
@@ -1208,7 +1210,7 @@ function App() {
           <section className="documented-library-modal">
             <div className="documented-library-modal-header">
               <div>
-                <span>DOCUMENTED CATALOG</span>
+                <span>CATÁLOGO DOCUMENTADO</span>
                 <h2>Procesos documentados</h2>
                 <p>
                   Selecciona un repositorio para ver sus procesos asociados.
@@ -1461,7 +1463,7 @@ function App() {
               </label>
 
               <div className="repository-name-choice">
-                <span>REPOSITORY NAME</span>
+                <span>NOMBRE DEL REPOSITORIO</span>
 
                 <label>
                   <input
@@ -1549,7 +1551,7 @@ function App() {
 
             {pendingRepositoryUpload?.repository.repositorio_existente && (
               <div className="repository-match-panel">
-                <span>EXISTING REPOSITORY DETECTED</span>
+                <span>REPOSITORIO EXISTENTE DETECTADO</span>
 
                 <strong>
                   {

@@ -4,7 +4,7 @@
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 28px;
-  background: rgba(16, 20, 38, 0.96);
+  background: var(--theme-surface, rgba(16, 20, 38, 0.96));
 }
 
 .diagram-viewer-header {
@@ -13,7 +13,7 @@
   justify-content: space-between;
   gap: 24px;
   padding: 28px 30px 24px;
-  border-bottom: 1px solid #252a42;
+  border-bottom: 1px solid var(--theme-border, #252a42);
 }
 
 .diagram-eyebrow {
@@ -45,37 +45,37 @@
   height: 42px;
   display: grid;
   place-items: center;
-  border: 1px solid #343a55;
+  border: 1px solid var(--theme-border, #343a55);
   border-radius: 14px;
-  color: #bec1ce;
-  background: #1a1e33;
+  color: var(--theme-ink, #bec1ce);
+  background: var(--theme-surface-soft, #1a1e33);
   cursor: pointer;
 }
 
 .diagram-fullscreen-button:hover {
-  border-color: #5f58d4;
-  color: white;
+  border-color: var(--theme-accent-border, #5f58d4);
+  color: var(--theme-ink, white);
 }
 
 .diagram-fullscreen-button.active {
-  border-color: #665ce3;
-  color: white;
-  background: rgba(98, 86, 239, 0.25);
+  border-color: var(--theme-accent-border, #665ce3);
+  color: var(--theme-ink, white);
+  background: var(--theme-accent-soft, rgba(98, 86, 239, 0.25));
 }
 
 .diagram-secondary-button {
   min-height: 42px;
   padding: 0 18px;
-  border: 1px solid #343a55;
+  border: 1px solid var(--theme-border, #343a55);
   border-radius: 14px;
-  color: #bec1ce;
-  background: #1a1e33;
+  color: var(--theme-ink, #bec1ce);
+  background: var(--theme-surface-soft, #1a1e33);
   cursor: pointer;
 }
 
 .diagram-secondary-button:hover {
-  border-color: #5f58d4;
-  color: white;
+  border-color: var(--theme-accent-border, #5f58d4);
+  color: var(--theme-ink, white);
 }
 
 .diagram-toolbar {
@@ -84,8 +84,8 @@
   align-items: center;
   gap: 18px;
   padding: 14px 20px;
-  border-bottom: 1px solid #252a42;
-  background: #12162a;
+  border-bottom: 1px solid var(--theme-border, #252a42);
+  background: var(--theme-surface, #12162a);
 }
 
 .diagram-navigation,
@@ -103,10 +103,10 @@
   justify-content: center;
   gap: 7px;
   padding: 0 12px;
-  border: 1px solid #303650;
+  border: 1px solid var(--theme-border, #303650);
   border-radius: 11px;
-  color: #aeb2c1;
-  background: #1b1f34;
+  color: var(--theme-ink-secondary, #aeb2c1);
+  background: var(--theme-surface-soft, #1b1f34);
   cursor: pointer;
 }
 
@@ -137,7 +137,7 @@
   overflow: hidden;
   padding: 0;
   border: 0;
-  color: #7f8498;
+  color: var(--theme-ink-muted, #7f8498);
   background: transparent;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -150,12 +150,12 @@
 }
 
 .diagram-breadcrumb-separator {
-  color: #4e5367;
+  color: var(--theme-ink-muted, #4e5367);
 }
 
 .diagram-zoom span {
   min-width: 48px;
-  color: #8f94a6;
+  color: var(--theme-ink-secondary, #8f94a6);
   font-size: 12px;
   text-align: center;
 }
@@ -163,10 +163,10 @@
 .diagram-error {
   margin: 18px 22px 0;
   padding: 13px 15px;
-  border: 1px solid #a8475a;
+  border: 1px solid var(--theme-danger-border, #a8475a);
   border-radius: 13px;
-  color: #ff9aac;
-  background: rgba(168, 71, 90, 0.12);
+  color: var(--theme-danger-ink, #ff9aac);
+  background: var(--theme-danger-soft, rgba(168, 71, 90, 0.12));
 }
 
 .diagram-meta {
@@ -174,22 +174,22 @@
   flex-wrap: wrap;
   gap: 8px;
   padding: 14px 22px;
-  border-bottom: 1px solid #252a42;
+  border-bottom: 1px solid var(--theme-border, #252a42);
 }
 
 .diagram-meta span {
   padding: 7px 10px;
-  border: 1px solid #303650;
+  border: 1px solid var(--theme-border, #303650);
   border-radius: 9px;
-  color: #84899d;
-  background: #191d31;
+  color: var(--theme-ink-secondary, #84899d);
+  background: var(--theme-surface-soft, #191d31);
   font-size: 11px;
 }
 
 .diagram-meta span:first-child {
-  color: #aea3ff;
-  border-color: rgba(112, 94, 231, 0.45);
-  background: rgba(99, 80, 210, 0.18);
+  color: var(--theme-accent-ink, #aea3ff);
+  border-color: var(--theme-accent-border, rgba(112, 94, 231, 0.45));
+  background: var(--theme-accent-soft, rgba(99, 80, 210, 0.18));
   font-weight: 800;
 }
 
@@ -203,10 +203,10 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  border: 1px solid #3b4262;
+  border: 1px solid var(--theme-accent-border, #3b4262);
   border-radius: 22px;
-  background: rgba(17, 21, 39, 0.98);
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.48);
+  background: var(--theme-surface, rgba(17, 21, 39, 0.98));
+  box-shadow: 0 22px 55px var(--theme-shadow, rgba(0, 0, 0, 0.48));
   backdrop-filter: blur(14px);
 }
 
@@ -216,7 +216,7 @@
   justify-content: space-between;
   gap: 16px;
   padding: 20px;
-  border-bottom: 1px solid #292f48;
+  border-bottom: 1px solid var(--theme-border, #292f48);
 }
 
 .transformation-info-header > div {
@@ -258,14 +258,14 @@
   padding: 0;
   border: 0;
   border-radius: 10px;
-  color: #8d92a5;
+  color: var(--theme-ink-secondary, #8d92a5);
   background: transparent;
   cursor: pointer;
 }
 
 .transformation-info-header > button:hover {
-  color: white;
-  background: #242940;
+  color: var(--theme-ink, white);
+  background: var(--theme-surface-hover, #242940);
 }
 
 .transformation-info-content {
@@ -287,10 +287,10 @@
   display: grid;
   gap: 3px;
   padding: 11px 9px;
-  border: 1px solid #303650;
+  border: 1px solid var(--theme-border, #303650);
   border-radius: 12px;
-  color: #777d91;
-  background: #181d31;
+  color: var(--theme-ink-muted, #777d91);
+  background: var(--theme-surface-soft, #181d31);
   font-size: 9px;
   text-align: center;
 }
@@ -310,7 +310,7 @@
   align-items: center;
   gap: 7px;
   margin: 0;
-  color: #d7d9e2;
+  color: var(--theme-ink, #d7d9e2);
   font-size: 12px;
 }
 
@@ -320,7 +320,7 @@
 
 .transformation-info-section p {
   margin: 0;
-  color: #747a90;
+  color: var(--theme-ink-muted, #747a90);
   font-size: 11px;
   line-height: 1.5;
 }
@@ -335,46 +335,46 @@
   max-width: 100%;
   overflow: hidden;
   padding: 7px 9px;
-  border: 1px solid rgba(25, 217, 163, 0.25);
+  border: 1px solid var(--theme-success-border, rgba(25, 217, 163, 0.25));
   border-radius: 9px;
-  color: #62e1bd;
-  background: rgba(25, 217, 163, 0.08);
+  color: var(--theme-success-ink, #62e1bd);
+  background: var(--theme-success-soft, rgba(25, 217, 163, 0.08));
   font-size: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .technical-chip-list.destination > span {
-  border-color: rgba(125, 114, 255, 0.3);
-  color: #aaa2ff;
-  background: rgba(98, 86, 239, 0.11);
+  border-color: var(--theme-accent-border, rgba(125, 114, 255, 0.3));
+  color: var(--theme-accent-ink, #aaa2ff);
+  background: var(--theme-accent-soft, rgba(98, 86, 239, 0.11));
 }
 
 .technical-chip-list.neutral > span {
-  border-color: #343a55;
-  color: #a8adbd;
-  background: #1b2035;
+  border-color: var(--theme-border, #343a55);
+  color: var(--theme-ink-secondary, #a8adbd);
+  background: var(--theme-surface-soft, #1b2035);
 }
 
 .sql-status {
   margin-left: auto;
   padding: 4px 6px;
   border-radius: 7px;
-  color: #8b90a3;
-  background: #24293e;
+  color: var(--theme-ink-secondary, #8b90a3);
+  background: var(--theme-surface-soft, #24293e);
   font-size: 8px;
 }
 
 .sql-status.available {
-  color: #54dfb7;
-  background: rgba(25, 217, 163, 0.12);
+  color: var(--theme-success-ink, #54dfb7);
+  background: var(--theme-success-soft, rgba(25, 217, 163, 0.12));
 }
 
 .sql-script-card {
   overflow: hidden;
-  border: 1px solid #303650;
+  border: 1px solid var(--theme-border, #303650);
   border-radius: 12px;
-  background: #151a2d;
+  background: var(--theme-surface-soft, #151a2d);
 }
 
 .sql-script-card summary {
@@ -405,18 +405,18 @@
 }
 
 .sql-script-card summary strong {
-  color: #d7d9e2;
+  color: var(--theme-ink, #d7d9e2);
   font-size: 11px;
 }
 
 .sql-script-card summary small {
-  color: #777d91;
+  color: var(--theme-ink-muted, #777d91);
   font-size: 9px;
 }
 
 .sql-script-card summary svg {
   flex: 0 0 auto;
-  color: #858a9d;
+  color: var(--theme-ink-secondary, #858a9d);
   transition: transform 160ms ease;
 }
 
@@ -429,9 +429,9 @@
   overflow: auto;
   margin: 0;
   padding: 13px;
-  border-top: 1px solid #292f48;
-  color: #bdc8e8;
-  background: #0d1120;
+  border-top: 1px solid var(--theme-border, #292f48);
+  color: var(--theme-accent-ink, #bdc8e8);
+  background: var(--theme-surface, #0d1120);
   font-family: Consolas, 'Courier New', monospace;
   font-size: 10px;
   line-height: 1.55;
@@ -450,25 +450,25 @@
   justify-content: space-between;
   gap: 12px;
   padding: 7px 9px;
-  border-bottom: 1px solid #272c43;
+  border-bottom: 1px solid var(--theme-border, #272c43);
 }
 
 .step-type-list small {
-  color: #8d92a5;
+  color: var(--theme-ink-secondary, #8d92a5);
   font-size: 10px;
 }
 
 .step-type-list strong {
-  color: #d9dbe4;
+  color: var(--theme-ink, #d9dbe4);
   font-size: 11px;
 }
 
 .technical-history-note {
   padding: 11px 12px;
-  border: 1px solid rgba(255, 189, 26, 0.24);
+  border: 1px solid var(--theme-warning-border, rgba(255, 189, 26, 0.24));
   border-radius: 11px;
-  color: #c7a958;
-  background: rgba(255, 189, 26, 0.06);
+  color: var(--theme-warning-ink, #c7a958);
+  background: var(--theme-warning-soft, rgba(255, 189, 26, 0.06));
   font-size: 10px;
   line-height: 1.5;
 }
@@ -491,7 +491,7 @@
   background:
     radial-gradient(
       circle at 1px 1px,
-      rgba(115, 121, 150, 0.16) 1px,
+      var(--theme-grid, rgba(115, 121, 150, 0.16)) 1px,
       transparent 1px
     );
   background-size: 24px 24px;
@@ -535,7 +535,7 @@
   inset: 0;
   z-index: 1;
   overflow: visible;
-  color: #7772dc;
+  color: var(--theme-accent-ink, #7772dc);
   pointer-events: none;
 }
 
@@ -547,7 +547,7 @@
 }
 
 .diagram-hop.disabled {
-  stroke: #555a6c;
+  stroke: var(--theme-ink-muted, #555a6c);
   stroke-dasharray: 8 7;
   opacity: 0.45;
 }
@@ -560,16 +560,16 @@
   align-items: center;
   gap: 10px;
   padding: 10px 12px;
-  border: 1px solid #353b56;
+  border: 1px solid var(--theme-border, #353b56);
   border-radius: 16px;
   color: var(--text);
   background:
     linear-gradient(
       145deg,
-      #1d2239,
-      #15192d
+      var(--theme-surface-soft, #1d2239),
+      var(--theme-surface-soft, #15192d)
     );
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 12px 28px var(--theme-shadow, rgba(0, 0, 0, 0.22));
   text-align: left;
   touch-action: none;
   user-select: none;
@@ -581,19 +581,19 @@
 }
 
 .diagram-node.navigable {
-  border-color: #675ee0;
+  border-color: var(--theme-accent-border, #675ee0);
   box-shadow:
-    0 0 0 1px rgba(103, 94, 224, 0.18),
-    0 12px 30px rgba(50, 39, 140, 0.26);
+    0 0 0 1px var(--theme-accent-soft, rgba(103, 94, 224, 0.18)),
+    0 12px 30px var(--theme-accent-soft, rgba(50, 39, 140, 0.26));
 }
 
 .diagram-node.navigable:hover {
-  border-color: #8b82ff;
+  border-color: var(--theme-accent-border, #8b82ff);
   background:
     linear-gradient(
       145deg,
-      #29274e,
-      #191d33
+      var(--theme-surface-hover, #29274e),
+      var(--theme-surface-hover, #191d33)
     );
   transform: translateY(-2px);
 }
@@ -605,7 +605,7 @@
   flex-direction: column;
   border: 0;
   border-radius: 0;
-  background: #0d1122;
+  background: var(--theme-surface, #0d1122);
 }
 
 .diagram-viewer:fullscreen
@@ -616,14 +616,14 @@
 }
 
 .diagram-node.transformation-step {
-  border-color: #2d5d70;
+  border-color: var(--theme-info-border, #2d5d70);
 }
 
 .diagram-node.transformation-step.navigable {
-  border-color: #2aabd3;
+  border-color: var(--theme-info-border, #2aabd3);
   box-shadow:
-    0 0 0 1px rgba(42, 171, 211, 0.14),
-    0 12px 30px rgba(16, 92, 120, 0.2);
+    0 0 0 1px var(--theme-info-soft, rgba(42, 171, 211, 0.14)),
+    0 12px 30px var(--theme-info-soft, rgba(16, 92, 120, 0.2));
 }
 
 .diagram-node-icon {
@@ -632,13 +632,13 @@
   display: grid;
   place-items: center;
   border-radius: 11px;
-  color: #a79cff;
-  background: rgba(102, 84, 218, 0.25);
+  color: var(--theme-accent-ink, #a79cff);
+  background: var(--theme-accent-soft, rgba(102, 84, 218, 0.25));
 }
 
 .transformation-step .diagram-node-icon {
-  color: #56d5f5;
-  background: rgba(26, 145, 181, 0.22);
+  color: var(--theme-info-ink, #56d5f5);
+  background: var(--theme-info-soft, rgba(26, 145, 181, 0.22));
 }
 
 .diagram-node-copy {
@@ -659,7 +659,7 @@
 }
 
 .diagram-node-copy small {
-  color: #777d91;
+  color: var(--theme-ink-muted, #777d91);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -671,7 +671,7 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  color: white;
+  color: var(--theme-on-accent, white);
   background: var(--primary);
   font-size: 15px;
   font-weight: 700;

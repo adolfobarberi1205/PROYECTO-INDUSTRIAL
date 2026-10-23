@@ -251,7 +251,7 @@ function LineagePage({
           <section className="lineage-empty-analysis">
             <GitBranch size={32} />
 
-            <h1>Reconstruct a process first</h1>
+            <h1>Reconstruye primero un proceso</h1>
 
             <p>
               Lineage becomes available after selecting a
@@ -298,7 +298,7 @@ function LineagePage({
 
                 {category === 'variables' && (
                   <span className="lineage-active-badge">
-                    ACTIVE
+                    ACTIVO
                   </span>
                 )}
 
@@ -330,7 +330,7 @@ function LineagePage({
 
                 {category === 'parameters' && (
                   <span className="lineage-active-badge">
-                    ACTIVE
+                    ACTIVO
                   </span>
                 )}
 
@@ -361,10 +361,10 @@ function LineagePage({
                 </span>
 
                 {category === 'facts' && (
-                  <span className="lineage-active-badge">ACTIVE</span>
+                  <span className="lineage-active-badge">ACTIVO</span>
                 )}
 
-                <span className="lineage-category-label">FACT TABLES</span>
+                <span className="lineage-category-label">TABLAS FACT</span>
                 <strong>{lineage.totales.tablas_fact}</strong>
                 <small>Field lineage from target to source</small>
               </button>
@@ -383,11 +383,11 @@ function LineagePage({
                 </span>
 
                 {category === 'dimensions' && (
-                  <span className="lineage-active-badge">ACTIVE</span>
+                  <span className="lineage-active-badge">ACTIVO</span>
                 )}
 
                 <span className="lineage-category-label">
-                  DIM TABLES
+                  TABLAS DIM
                 </span>
                 <strong>{lineage.totales.tablas_dim}</strong>
                 <small>Source and transformation lineage</small>
@@ -409,7 +409,7 @@ function LineagePage({
                     </span>
 
                     <div>
-                      <h2>System Variables</h2>
+                      <h2>Variables del sistema</h2>
                       <p>Click a row to inspect its usage</p>
                     </div>
                   </div>
@@ -499,7 +499,7 @@ function LineagePage({
                     </span>
 
                     <div>
-                      <h2>Process Parameters</h2>
+                      <h2>Parámetros del proceso</h2>
                       <p>Click a row to inspect its usage</p>
                     </div>
                   </div>
@@ -571,7 +571,7 @@ function LineagePage({
                 {selectedParameter && (
                   <div className="lineage-detail-panel parameter">
                     <div>
-                      <span>SELECTED PARAMETER</span>
+                      <span>PARÁMETRO SELECCIONADO</span>
                       <strong>{selectedParameter.etiqueta}</strong>
                     </div>
 

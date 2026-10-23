@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
+    "test:theme": "node --test tests/theme.test.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

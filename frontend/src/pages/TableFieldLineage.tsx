@@ -142,7 +142,7 @@ function TableFieldLineage({
     return (
       <section className="table-lineage-empty">
         <GitBranch size={28} />
-        <h2>No {kind} lineage is available</h2>
+        <h2>No hay linaje disponible para {kind}</h2>
         <p>
           Reconstruct the process again to generate table and field
           lineage.
@@ -156,7 +156,7 @@ function TableFieldLineage({
       <aside className="table-lineage-catalog">
         <div className="table-lineage-catalog-heading">
           <div>
-            <span>{kind} TABLES</span>
+            <span>TABLAS {kind}</span>
             <strong>{tables.length}</strong>
           </div>
 
@@ -202,7 +202,7 @@ function TableFieldLineage({
         <main className="table-field-lineage-panel">
           <header className="table-field-lineage-heading">
             <div>
-              <span>SELECTED {kind}</span>
+              <span>{kind} SELECCIONADA</span>
               <h2>{selectedTable.nombre}</h2>
               <p>
                 Expand a field to trace it from the final table back to
@@ -317,7 +317,7 @@ function TableFieldLineage({
                     <>
                     <div className="field-origin-flow">
                       <div className="lineage-flow-node target">
-                        <span>FINAL FIELD</span>
+                        <span>CAMPO FINAL</span>
                         <strong>{field.nombre}</strong>
                         {field.campo_flujo &&
                           field.campo_flujo !== field.nombre && (
@@ -327,7 +327,7 @@ function TableFieldLineage({
 
                       <div className="lineage-flow-arrow">
                         <ArrowLeft size={25} />
-                        <span>COMES FROM</span>
+                        <span>PROVIENE DE</span>
                       </div>
 
                       <button
@@ -341,7 +341,7 @@ function TableFieldLineage({
                           toggleSet(setExpandedOperations, fieldKey)
                         }
                       >
-                        <span>TRANSFORMATION</span>
+                        <span>TRANSFORMACIÓN</span>
                         <strong>{originLabel(field.tipo_origen)}</strong>
                         <small>
                           {isOperationExpanded
@@ -365,7 +365,7 @@ function TableFieldLineage({
 
                       <div className="lineage-flow-arrow">
                         <ArrowLeft size={25} />
-                        <span>RECEIVES FROM</span>
+                        <span>RECIBE DE</span>
                       </div>
 
                       <div className="lineage-source-nodes">
@@ -404,7 +404,7 @@ function TableFieldLineage({
                         ) : (
                           <div className="lineage-flow-node source generated">
                             <Sparkles size={16} />
-                            <span>GENERATED VALUE</span>
+                            <span>VALOR GENERADO</span>
                             <strong>{originLabel(field.tipo_origen)}</strong>
                           </div>
                         )}
@@ -417,7 +417,7 @@ function TableFieldLineage({
                         key={`${fieldKey}:${continuation.table.nombre}`}
                       >
                         <header>
-                          <span>DIMENSION SOURCE CONTINUATION</span>
+                          <span>ORIGEN DE LA DIMENSIÓN</span>
                           <strong>{continuation.table.nombre}</strong>
                           <small>
                             Original data sources used to construct this
@@ -428,13 +428,13 @@ function TableFieldLineage({
                         <div className="dimension-original-source-flow">
                           <div className="dimension-source-anchor">
                             <Database size={17} />
-                            <span>DIMENSION</span>
+                            <span>DIMENSIÓN</span>
                             <strong>{continuation.table.nombre}</strong>
                           </div>
 
                           <div className="lineage-flow-arrow">
                             <ArrowLeft size={25} />
-                            <span>COMES FROM</span>
+                            <span>PROVIENE DE</span>
                           </div>
 
                           <div className="dimension-original-source-list">

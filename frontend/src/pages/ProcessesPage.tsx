@@ -1045,7 +1045,7 @@ function ProcessesPage({
           </div>
 
           <div className="process-actions-subtitle">
-            PROCESS ANALYSIS
+            ANÁLISIS DE PROCESOS
           </div>
 
           <div className="process-action-list">
@@ -1171,8 +1171,8 @@ function ProcessesPage({
           <div className="selected-process-summary">
             <span>
               {batchSelections.length > 0
-                ? 'ROOT JOBS FOR BATCH'
-                : 'SELECTED ROOT JOB'}
+                ? 'JOBS PRINCIPALES DEL LOTE'
+                : 'JOB PRINCIPAL SELECCIONADO'}
             </span>
 
             <strong>
@@ -1242,7 +1242,7 @@ function ProcessesPage({
         <section className="process-metrics-grid">
           <article className="process-stat-card">
             <div className="process-stat-heading">
-              <span>TOTAL PROCESSES</span>
+              <span>TOTAL DE PROCESOS</span>
               <GitBranch size={19} />
             </div>
 
@@ -1255,7 +1255,7 @@ function ProcessesPage({
 
           <article className="process-stat-card transformations">
             <div className="process-stat-heading">
-              <span>TRANSFORMATIONS</span>
+              <span>TRANSFORMACIONES</span>
               <CheckCircle2 size={19} />
             </div>
 
@@ -1283,7 +1283,7 @@ function ProcessesPage({
 
           <article className="process-stat-card selected-folder">
             <div className="process-stat-heading">
-              <span>SELECTED FOLDER</span>
+              <span>CARPETA SELECCIONADA</span>
               <FolderOpen size={19} />
             </div>
 
@@ -1301,7 +1301,7 @@ function ProcessesPage({
         <section className="process-browser-card">
           <div className="process-browser-header">
             <div>
-              <h2>All Processes</h2>
+              <h2>Todos los procesos</h2>
 
               <p>
                 Jobs and transformations from the
@@ -1517,7 +1517,7 @@ function ProcessesPage({
                   REPOSITORY STRUCTURE
                 </span>
 
-                <h2>Select Folder</h2>
+                <h2>Seleccionar carpeta</h2>
               </div>
 
               <button
@@ -1560,9 +1560,9 @@ function ProcessesPage({
             <section className="process-selector-modal job-selector">
               <div className="process-selector-header">
                 <div>
-                  <span>ROOT PROCESS</span>
+                  <span>PROCESO PRINCIPAL</span>
 
-                  <h2>Select Root Job</h2>
+                  <h2>Seleccionar Job principal</h2>
                 </div>
 
                 <button
@@ -1640,9 +1640,9 @@ function ProcessesPage({
           <section className="process-selector-modal batch-selector">
             <div className="process-selector-header">
               <div>
-                <span>MULTIPLE ROOT PROCESSES</span>
+                <span>VARIOS PROCESOS PRINCIPALES</span>
 
-                <h2>Select Root Jobs</h2>
+                <h2>Seleccionar Jobs principales</h2>
 
                 <p>
                   Select every Job that represents an independent
@@ -1745,12 +1745,12 @@ function ProcessesPage({
           <section className="process-selector-modal batch-editor">
             <div className="process-selector-header">
               <div>
-                <span>BATCH DOCUMENTATION</span>
+                <span>DOCUMENTACIÓN POR LOTES</span>
 
                 <h2>
                   {batchResults.length > 0
-                    ? 'Batch results'
-                    : 'Name the ETL processes'}
+                    ? 'Resultados del lote'
+                    : 'Nombra los procesos ETL'}
                 </h2>
 
                 <p>
@@ -1798,7 +1798,7 @@ function ProcessesPage({
                     </div>
 
                     <label>
-                      <span>PROCESS NAME</span>
+                      <span>NOMBRE DEL PROCESO</span>
                       <input
                         value={item.nombreProceso}
                         maxLength={255}

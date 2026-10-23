@@ -397,7 +397,7 @@ function VariableLineageDiagram({
     >
       <header className="variable-lineage-header">
         <div>
-          <span>VARIABLE LINEAGE</span>
+          <span>LINAJE DE VARIABLE</span>
           <h2>
             {route?.etiqueta ?? `\${${variableName}}`}
           </h2>
@@ -536,7 +536,7 @@ function VariableLineageDiagram({
                   >
                     <path
                       d="M0,0 L10,5 L0,10 Z"
-                      fill="#6fe2c1"
+                  fill="var(--theme-success-ink, #6fe2c1)"
                     />
                   </marker>
                   <marker
@@ -550,7 +550,7 @@ function VariableLineageDiagram({
                   >
                     <path
                       d="M0,0 L10,5 L0,10 Z"
-                      fill="#d39b55"
+                  fill="var(--theme-warning-ink, #d39b55)"
                     />
                   </marker>
                 </defs>
