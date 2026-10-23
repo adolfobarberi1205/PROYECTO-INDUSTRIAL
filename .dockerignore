@@ -1,0 +1,17 @@
+# Allowlist: the backend build never receives local data, Git or credentials.
+**
+!backend/
+!backend/Dockerfile
+!backend/requirements.txt
+!backend/app/
+!backend/app/**
+!legacy/
+!legacy/reconstructor_pentaho.py
+**/__pycache__/
+**/*.py[cod]
+**/.env
+**/.env.*
+**/*.xml
+**/*.properties
+**/*.pem
+**/*.key

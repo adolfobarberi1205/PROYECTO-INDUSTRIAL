@@ -1,0 +1,19 @@
+# Allow only build inputs. In particular, do not send Vite .env files.
+**
+!Dockerfile
+!nginx.conf
+!package.json
+!package-lock.json
+!index.html
+!tsconfig*.json
+!vite.config.ts
+!src/
+!src/**
+!public/
+!public/**
+**/.env
+**/.env.*
+**/*.xml
+**/*.properties
+**/*.pem
+**/*.key

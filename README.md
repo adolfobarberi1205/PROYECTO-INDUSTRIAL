@@ -97,7 +97,11 @@ Las muestras de pruebas deben ser sintéticas o contar con autorización.
 
 ## Despliegue
 
-Esta versión se ejecuta en desarrollo local; todavía no incluye Docker ni un
-despliegue automático. Antes de publicar en un servidor deben revisarse las URLs
-locales del frontend, CORS, autenticación, HTTPS, gestión de secretos, permisos,
-respaldos y los límites de procesamiento de archivos.
+También se puede ejecutar localmente con Docker Desktop: dos contenedores para
+frontend y backend, conservando el PostgreSQL instalado en Windows.
+Consultar [DOCKER_LOCAL.md](DOCKER_LOCAL.md) para iniciar, detener y actualizar
+la aplicación y conocer dónde se conservan los datos.
+
+Esta configuración no es un despliegue corporativo. Antes de publicar en un
+servidor deben revisarse autenticación, HTTPS, gestión de secretos, permisos,
+redes, respaldos y los límites de procesamiento de archivos.

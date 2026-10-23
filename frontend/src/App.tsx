@@ -19,6 +19,7 @@ import {
 } from 'lucide-react'
 
 import './App.css'
+import { API_BASE_URL } from './config/api'
 import ProcessesPage from './pages/ProcessesPage'
 import LineagePage from './pages/LineagePage'
 import DocumentationPage from './pages/DocumentationPage'
@@ -26,10 +27,6 @@ import DiagramViewer from './pages/DiagramViewer'
 import DocumentedProcessSummaryPage, {
   type DocumentedProcess,
 } from './pages/DocumentedProcessSummaryPage'
-
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL ??
-  'http://127.0.0.1:8000'
 
 type ActivePage =
   | 'overview'

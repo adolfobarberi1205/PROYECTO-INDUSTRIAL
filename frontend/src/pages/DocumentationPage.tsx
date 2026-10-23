@@ -25,6 +25,7 @@ import {
 } from 'lucide-react'
 
 import './DocumentationPage.css'
+import { API_BASE_URL } from '../config/api'
 
 type ActivePage =
   | 'overview'
@@ -289,8 +290,8 @@ function DocumentationPage({
       try {
         const response = await fetch(
           documentedProcessId
-            ? `http://127.0.0.1:8000/procesos-documentados/${documentedProcessId}/documentacion`
-            : `http://127.0.0.1:8000/analisis/${analysisId}/documentacion/preview`,
+            ? `${API_BASE_URL}/procesos-documentados/${documentedProcessId}/documentacion`
+            : `${API_BASE_URL}/analisis/${analysisId}/documentacion/preview`,
           { signal: controller.signal },
         )
 
@@ -363,7 +364,7 @@ function DocumentationPage({
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/analisis/${analysisId}/documentacion`,
+        `${API_BASE_URL}/analisis/${analysisId}/documentacion`,
         {
           method: 'POST',
           headers: {
@@ -410,7 +411,7 @@ function DocumentationPage({
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/procesos-documentados/${documentedProcessId}`,
+        `${API_BASE_URL}/procesos-documentados/${documentedProcessId}`,
         {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },

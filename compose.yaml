@@ -1,0 +1,62 @@
+# Local Windows + Docker Desktop only. PostgreSQL stays on Windows.
+name: etl-local
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      DATABASE_HOST_OVERRIDE: host.docker.internal
+      DATABASE_ECHO: "false"
+    volumes:
+      # Read the existing dotenv file without copying it or interpolating secrets.
+      - type: bind
+        source: ./backend/.env
+        target: /app/backend/.env
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./archivos_temporales
+        target: /app/archivos_temporales
+      - type: bind
+        source: ./resultados_temporales
+        target: /app/resultados_temporales
+    expose:
+      - "8000"
+    init: true
+    restart: unless-stopped
+    stop_grace_period: 30s
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=5)"]
+      interval: 15s
+      timeout: 7s
+      retries: 5
+      start_period: 30s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8080:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/healthz"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

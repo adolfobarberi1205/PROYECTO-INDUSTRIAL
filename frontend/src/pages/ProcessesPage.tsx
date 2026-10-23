@@ -21,6 +21,7 @@ import {
 } from 'lucide-react'
 
 import './ProcessesPage.css'
+import { API_BASE_URL } from '../config/api'
 import DiagramViewer from './DiagramViewer'
 
 type ProcessesPageProps = {
@@ -465,7 +466,7 @@ function ProcessesPage({
 
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/repositorios/${uploadId}/carpetas`,
+          `${API_BASE_URL}/repositorios/${uploadId}/carpetas`,
         )
 
         if (!response.ok) {
@@ -509,7 +510,7 @@ function ProcessesPage({
 
       try {
         const response = await fetch(
-          'http://127.0.0.1:8000/procesos-documentados',
+          `${API_BASE_URL}/procesos-documentados`,
           { signal: controller.signal },
         )
 
@@ -588,7 +589,7 @@ function ProcessesPage({
         })
 
       const response = await fetch(
-        `http://127.0.0.1:8000/repositorios/${uploadId}/contenido?${searchParameters.toString()}`,
+        `${API_BASE_URL}/repositorios/${uploadId}/contenido?${searchParameters.toString()}`,
       )
 
       if (!response.ok) {
@@ -778,7 +779,7 @@ function ProcessesPage({
 
     try {
       const analysisResponse = await fetch(
-        `http://127.0.0.1:8000/repositorios/${uploadId}/analizar-lote`,
+        `${API_BASE_URL}/repositorios/${uploadId}/analizar-lote`,
         {
           method: 'POST',
           headers: {
@@ -821,7 +822,7 @@ function ProcessesPage({
 
       if (completedAnalyses.length > 0) {
         const documentationResponse = await fetch(
-          'http://127.0.0.1:8000/analisis/documentacion/lote',
+          `${API_BASE_URL}/analisis/documentacion/lote`,
           {
             method: 'POST',
             headers: {
@@ -921,7 +922,7 @@ function ProcessesPage({
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/repositorios/${uploadId}/analizar`,
+        `${API_BASE_URL}/repositorios/${uploadId}/analizar`,
         {
           method: 'POST',
           headers: {

@@ -1,6 +1,7 @@
 from functools import lru_cache
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from sqlalchemy.engine import make_url
 
 
 class DatabaseSettings(BaseSettings):
@@ -8,6 +9,7 @@ class DatabaseSettings(BaseSettings):
 
     database_url: str | None = None
     database_echo: bool = False
+    database_host_override: str | None = None
 
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -21,6 +23,13 @@ class DatabaseSettings(BaseSettings):
                 "DATABASE_URL no esta configurada. "
                 "La base de datos permanente aun no puede conectarse."
             )
+
+        if self.database_host_override:
+            # Docker Desktop reaches Windows through this optional host.
+            # Keep credentials, database, port and query options unchanged.
+            return make_url(self.database_url).set(
+                host=self.database_host_override,
+            ).render_as_string(hide_password=False)
 
         return self.database_url
 

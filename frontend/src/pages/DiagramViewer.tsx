@@ -27,6 +27,7 @@ import {
 } from 'lucide-react'
 
 import './DiagramViewer.css'
+import { API_BASE_URL } from '../config/api'
 
 type DiagramTarget = {
   id: string | null
@@ -303,8 +304,8 @@ function DiagramViewer({
 
       const query = parameters.toString()
       const endpoint = documentedProcessId
-        ? `http://127.0.0.1:8000/procesos-documentados/${documentedProcessId}/diagrama`
-        : `http://127.0.0.1:8000/analisis/${analysisId}/diagrama`
+        ? `${API_BASE_URL}/procesos-documentados/${documentedProcessId}/diagrama`
+        : `${API_BASE_URL}/analisis/${analysisId}/diagrama`
       const response = await fetch(
         `${endpoint}${
           query ? `?${query}` : ''

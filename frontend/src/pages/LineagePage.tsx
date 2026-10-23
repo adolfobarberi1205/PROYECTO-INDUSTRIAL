@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 
 import './LineagePage.css'
+import { API_BASE_URL } from '../config/api'
 import VariableLineageDiagram from './VariableLineageDiagram'
 import TableFieldLineage, {
   type TableLineage,
@@ -151,8 +152,8 @@ function LineagePage({
 
       try {
         const endpoint = documentedProcessId
-          ? `http://127.0.0.1:8000/procesos-documentados/${documentedProcessId}/lineage`
-          : `http://127.0.0.1:8000/analisis/${analysisId}/lineage`
+          ? `${API_BASE_URL}/procesos-documentados/${documentedProcessId}/lineage`
+          : `${API_BASE_URL}/analisis/${analysisId}/lineage`
         const response = await fetch(endpoint)
 
         if (!response.ok) {

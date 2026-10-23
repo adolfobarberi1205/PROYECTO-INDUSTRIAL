@@ -24,6 +24,7 @@ import {
 } from 'lucide-react'
 
 import './VariableLineageDiagram.css'
+import { API_BASE_URL } from '../config/api'
 
 type LineageNode = {
   id: string
@@ -200,8 +201,8 @@ function VariableLineageDiagram({
           nombre: variableName,
         })
         const endpoint = documentedProcessId
-          ? `http://127.0.0.1:8000/procesos-documentados/${documentedProcessId}/lineage/variable`
-          : `http://127.0.0.1:8000/analisis/${analysisId}/lineage/variable`
+          ? `${API_BASE_URL}/procesos-documentados/${documentedProcessId}/lineage/variable`
+          : `${API_BASE_URL}/analisis/${analysisId}/lineage/variable`
         const response = await fetch(
           `${endpoint}?${parameters.toString()}`,
         )
